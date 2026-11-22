@@ -1,22 +1,26 @@
 # Birthday story
 
-An Arabic birthday website in progress. This first version includes:
+An Arabic birthday website in progress.
 
-- A birthday cake with animated candle flames.
-- Floating balloons that pop when tapped or activated with the keyboard.
-- Falling confetti and a confetti burst when a balloon pops.
-- A lamp icon that switches the room between light and dark.
-- White stars that enter from outside the scene and gather to form the portrait.
-- Replay and reduced-motion support.
+## Current opening
 
-Open `index.html` in a browser. The page is self-contained and has no external library or image requests.
+- A custom Three.js cake model with frosting, decorations and numeral 2 and 3 candles.
+- Twelve floating 3D balloons that pop on touch. Popped objects are removed from rendering and hit-testing.
+- Confetti and a clickable lamp that changes the scene from day to night.
+- White stars entering from all four screen edges and gathering into the approved upright portrait.
+- Balloon-pop, lamp-click and star-shimmer sounds, started by a user gesture, with a mute control.
+- Star replay and reduced-motion support.
+
+Serve this directory as a static website. Runtime dependencies and portrait star data are bundled locally. There are no external library, image, audio or font requests. A recent browser with WebGL2 is required for the 3D scene. The model is stylized, not a photograph. Performance still needs checking on the intended phones.
 
 ## Still to build
 
-The cartoon character and board scene, yarn transition and memories gallery are not included in this version. They will be added after the remaining references, photos, text and scene details are ready.
+The cartoon character and board interaction, crochet message, yarn transition and memories gallery are not included yet.
 
 ## Portrait and privacy
 
-The portrait is made from star coordinates derived from a supplied photograph. No original JPEG is included. These coordinates can reconstruct the portrait, so they should still be treated as an image of the person. The portrait uses a small rigid rotation and proportional scaling, without generating a new face, changing the smile or inventing unseen anatomy.
+The bundle contains coordinates and brightness values derived from the approved upright portrait, not its source image file. These data can reconstruct the person's likeness, so they should still be treated as a portrait. The original photos and edited portrait PNGs are not included.
 
-This version uses 2D illustration and Canvas particles. It is not a finished 3D experience. Phone performance still needs to be checked on the intended devices.
+## Third-party software
+
+Three.js is used under its MIT license. See `THIRD_PARTY_NOTICES.txt` and the bundled license notice.
